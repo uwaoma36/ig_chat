@@ -13,7 +13,18 @@ let io=socketIo(server);
 
 io.on('connection',(socket)=>{
 console.log("new User connected");
+
+socket.on("disconnect",()=>{
+console.log("user has disconnected from server");
+
+})
+
 });
+
+
+
+
+
 server.listen(port, () => {
   console.log(`Server is up on ${port}`);
 });
