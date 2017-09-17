@@ -6,10 +6,7 @@ var socket=io();
    console.log("user disconnected");
  });
 
- socket.emit('new',{from:"ig@yahoo.com",
- text:"are u mr bellefuu"
- ,createdAt:12
-});
+ 
 
 socket.on("newMessage",function(message){
 console.log(message);

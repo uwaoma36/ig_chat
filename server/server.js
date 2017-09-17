@@ -15,14 +15,13 @@ io.on('connection',(socket)=>{
 console.log("new User connected");
 
 
-
-socket.emit("newMessage",{from:"ig@gmail.com",
-text:"we are on",
-createdAt:22
-});
-
 socket.on("createMessage",(message)=>{
   console.log(message);
+  io.emit("newMessage",{
+    from:message.from,
+    text:message.text,
+    createdAt:new Date().getTime()
+  });
 });
 
 
