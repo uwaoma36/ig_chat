@@ -14,6 +14,18 @@ let io=socketIo(server);
 io.on('connection',(socket)=>{
 console.log("new User connected");
 
+
+
+socket.emit("newMessage",{from:"ig@gmail.com",
+text:"we are on",
+createdAt:22
+});
+
+socket.on("createMessage",(message)=>{
+  console.log(message);
+});
+
+
 socket.on("disconnect",()=>{
 console.log("user has disconnected from server");
 
